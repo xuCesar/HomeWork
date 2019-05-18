@@ -1,0 +1,53 @@
+
+.add-article{
+
+  .item{
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    font-size: 24px;
+  }
+
+  .input{
+    width: 100%;
+    height: 100%;
+    padding: 0 40px;
+    box-sizing: border-box;
+  }
+
+  .cover{
+    font-size: 24px;
+    color: #666;
+  }
+  .cover-upload{
+    padding: 0 40px;
+    width: 300px;
+    height: 300px;
+  }
+  .at-image-picker__flex-item{
+    margin-left: 0;
+  }
+  .at-image-picker__flex-box{
+    padding: 0;
+  }
+
+  .textarea{
+    width: 100%;
+    font-size: 24px;
+    padding: 20px 40px;
+    box-sizing: border-box;
+  }
+
+  .btn-group{
+    display: flex;
+    margin-top: 40px;
+    justify-content: space-around;
+    align-items: center;
+    .add-btn, .update-btn{
+      width: 300px;
+      font-size: 30px;
+    }
+  }
+  
+
+}

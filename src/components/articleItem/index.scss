@@ -1,0 +1,35 @@
+@import '../../styles/minxin.scss';
+
+.card-item{
+  margin: 30px auto;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0 10px #999;
+  @include wh(670px, 220px);
+  .card-bg{
+    width: 100%;
+    height: 100%;
+  }
+  .card{
+    position: absolute;
+    top: 0;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    @include wh(100%, 100%);
+    @include fj(space-between, space-between);
+    flex-direction: column;
+
+    .head{
+      font-weight: 500;
+    }
+
+    .body{
+      font-size: 24px;
+      margin-top: 10px;
+      @include fj(space-between, center);
+    }
+  }
+}

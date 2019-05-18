@@ -1,0 +1,12 @@
+@import '../../styles/minxin.scss';
+
+.head{
+  @include wh(100%, 90px);
+  line-height: 90px;
+  border-bottom: 1PX solid rgba(238, 238, 238, 0.7);
+  color: $dark-gray;
+  font-size: 40px;
+  font-weight: 500;
+  padding: 0 40px;
+  box-sizing: border-box;
+}

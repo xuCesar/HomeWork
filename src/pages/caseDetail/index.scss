@@ -1,0 +1,79 @@
+@import '../../styles/minxin.scss';
+
+.case-detail{
+  .header{
+    @include wh(100%, 400px);
+    @include fj();
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+
+    .title{
+      font-size: 50px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .time{
+      font-size: 24px;
+    }
+
+    .tag-list{
+      font-size: 24px;
+      .tag{
+        border-bottom: 4px solid #333;
+        margin: 0 8px;
+      }
+    }
+
+  }
+  // .header::after{
+  //   content: '';
+  //   display: inline-block;
+  //   width: 100%;
+  //   height: 100px;
+  //   top: -50px;
+  //   background-color: rgba(63, 193, 216, 0.678);
+  //   position: absolute;
+  //   transform-origin: right center;
+  //   transform: rotate(-45deg);
+  // }
+
+  .case-content{
+    .shape{
+      color: #ccc;
+      margin-right: 15px;
+    }
+    .case-item{
+      padding: 40px;
+      .name{
+        font-size: 30px;
+        color: #333;
+        font-weight: 400;
+        margin: 15px 0;
+      }
+      .en-name{
+        font-size: 18px;
+        color: #ccc;
+      }
+      .text{
+        padding: 0 30px;
+        font-size: 24px;
+      }
+
+    }
+
+  }
+
+  .case-border{
+    @include wh(100%, 1PX);
+    background-color: #eee;
+  }
+
+  .case-end{
+    color: #999;
+    @include wh(100%, 100px);
+    @include fj();
+  }
+
+}
