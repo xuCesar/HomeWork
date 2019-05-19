@@ -23,9 +23,9 @@ class Index extends Component {
   }
 
   componentDidMount () {
-    article.get({
+    article.limit(5).get({
       success: res => {
-        console.log(res)
+        // console.log(res)
         this.setState({
           blog_list: res.data
         })

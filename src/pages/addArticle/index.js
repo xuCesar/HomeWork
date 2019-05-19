@@ -56,6 +56,8 @@ class AddArticle extends PureComponent {
   }
 
   onAddArticle = () => {
+    // console.log(this.props)
+    const { title, author, cover, content } = this.state
     wx.getFileSystemManager().readFile({
       filePath: this.state.files[0].url,
       encoding: 'base64',
@@ -73,10 +75,10 @@ class AddArticle extends PureComponent {
           if (res.result.statusCode === 200) {
             article.add({
               data: {
-                title: '如何快速开发一个自己的项目脚手架？',
-                author: 'Abc',
+                title: title,
+                author: author,
                 cover: res.result.fileID,
-                content: '5月17日，小米集团宣布新的组织架构调整和人事任命。集团董事长兼CEO雷军兼任中国区总裁，全面负责中国区业务开展和团队管理；同时成立大家电事业部，任命集团高级副总裁王川为大家电事业部总裁，负责除电视之外的空调、冰箱、洗衣机等大家电品类的业务开展和团队管理，向CEO汇报。',
+                content: content,
                 createTime: db.serverDate(),
                 updateTime: db.serverDate()
               }
@@ -92,6 +94,13 @@ class AddArticle extends PureComponent {
     })
   }
 
+  onHandleChange = (e) => {
+    console.log(e)
+    this.setState({
+      [e.target.id]: e.detail.value
+    })
+  }
+
 
   render() {
     const { title, author, cover, content } = this.state
@@ -101,13 +110,13 @@ class AddArticle extends PureComponent {
         <WhiteSpace />
 
         <View className='item'>
-          <Input className='input' type='text' placeholder='文章标题' maxLength={30} />
+          <Input className='input' id='title' type='text' placeholder='文章标题' maxLength={30} onBlur={this.onHandleChange} />
         </View>
 
         <WhiteSpace />
 
         <View className='item'>
-          <Input className='input' type='text' placeholder='作者名称' maxLength={10} />
+          <Input className='input' id='author' type='text' placeholder='作者名称' maxLength={10} onBlur={this.onHandleChange} />
         </View>
 
         <WhiteSpace />
@@ -128,14 +137,15 @@ class AddArticle extends PureComponent {
 
         <View className='textarea'>
           <Textarea
-            id='name' 
+            id='content' 
             className=''
             placeholder='输入文章' 
             placeholderClass='input-holder' 
             value=''
             style='background:#fff;width:100%;min-height:100px;' 
             autoHeight
-            onBlur={this.onTextareaBlur}
+            maxlength={-1}
+            onBlur={this.onHandleChange}
           />
         </View>
 

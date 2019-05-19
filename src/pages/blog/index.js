@@ -12,20 +12,14 @@ class Blog extends Component {
   }
 
   state={
-    articles: null
+    count: null,
+    articles: [],
+    loading: false,
   }
 
   componentWillMount () {}
   componentDidMount () {
-    wx.cloud.callFunction({
-      name: 'list',
-    }).then(res => {
-      this.setState({
-        articles: res.result.data
-      })
-    }).catch(err => {
-      console.log(err)
-    })
+    this.getDataList()
   }
   componentWillReceiveProps (nextProps,nextContext) {} 
   componentWillUnmount () {} 
@@ -33,9 +27,34 @@ class Blog extends Component {
   componentDidHide () {} 
   componentDidCatchError () {} 
   componentDidNotFound () {} 
+
+  getDataList = () => {
+    const { articles } = this.state
+    wx.cloud.callFunction({
+      name: 'list',
+      data: {
+        skip: articles.length || 0,
+        limit: 5
+      }
+    }).then(res => {
+      this.setState({
+        count: res.result.count,
+        articles: [...articles, ...res.result.data],
+        loading: true
+      })
+    }).catch(err => {
+      console.log(err)
+    })
+  }
+
+  onReachBottom = () => {
+    const { articles, count } = this.state
+    articles.length < count ? this.getDataList() : null
+  }
+
   render() {
     const { articles } = this.state
-    if (!articles) return null
+    if (!articles.length) return null
     return (
       <View className='blog-view'>
 

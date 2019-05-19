@@ -28,7 +28,6 @@ class ArticleItem extends PureComponent {
   render() {
     const { article } = this.props
     if (!article) return null
-    console.log(article)
     return (
       <View className="card-item" onClick={this.onViewToDetail.bind(this, article._id)}>
         <Image className='card-bg' mode="aspectFill" src={article.cover} />
