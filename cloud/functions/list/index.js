@@ -11,8 +11,8 @@ const article = db.collection('article')
 exports.main = async (event, context) => {
   const wxContext = cloud.getWXContext()
   return await article
-    .where({
-      _openid: wxContext.OPENID,
-    })
+    // .where({
+    //   _openid: wxContext.OPENID,
+    // })
     .get()
 }
