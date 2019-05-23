@@ -36,12 +36,14 @@
       align-items: center;
       margin-bottom: 15px;
       color: $dark-gray;
+      margin: 20px 0;
       .cover{
         @include wh(200px, 120px);
         margin-right: 20px;
         background-color: $light-gray;
         border-radius: 10px;
         overflow: hidden;
+        box-shadow: 0 0 10px #999;
         .cover-img{
           @include wh(100%, 100%);
         }

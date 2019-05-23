@@ -37,6 +37,13 @@ class ArticleDetail extends PureComponent {
   componentDidHide () {} 
   componentDidCatchError () {} 
   componentDidNotFound () {} 
+
+  onUpdateArticle = (id) => {
+    Taro.navigateTo({
+      url: '/pages/addArticle/index?id='+id
+    })
+  }
+
   render() {
     const {article} = this.state
     if (!article) return false
@@ -57,6 +64,7 @@ class ArticleDetail extends PureComponent {
         <View className='content'>
           <Text>{article.content}</Text>
         </View>
+        <Button onClick={this.onUpdateArticle.bind(this, article._id)}>UPDATE ARTICLE</Button>
       </View>
     );
   }

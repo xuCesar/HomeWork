@@ -55,3 +55,11 @@ $bg-color-gray: #F2F2F2;
   justify-content: $type;
   align-items: $items;
 }
+
+
+@mixin bj( $prefix, $url, $x: 100%, $y: 100%, $offset-x: center, $offset-y: center ) {
+  background-image: url(#{$prefix}assets/images/#{$url});
+  background-repeat: no-repeat;
+  background-size: $x $y;
+  background-position: $offset-x $offset-y;
+}

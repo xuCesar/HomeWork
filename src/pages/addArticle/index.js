@@ -24,11 +24,24 @@ class AddArticle extends PureComponent {
     author: null, 
     cover: null, 
     content: null,
+    article: null,
     showAddBtn: true
   }
 
   componentWillMount () {}
-  componentDidMount () {} 
+  componentDidMount () {
+    Taro.showLoading({
+      title: '加载中'
+    })
+    article.doc(this.$router.params.id).get().then(res => {
+      console.log(res)
+      this.setState({
+        article: res.data
+      },() => {
+        Taro.hideLoading()
+      })
+    })
+  } 
   componentWillReceiveProps (nextProps,nextContext) {} 
   componentWillUnmount () {} 
   componentDidShow () {} 
@@ -103,14 +116,14 @@ class AddArticle extends PureComponent {
 
 
   render() {
-    const { title, author, cover, content } = this.state
+    const { article } = this.state
     return (
       <View className='add-article'>
         <Head name='Add Article' />
         <WhiteSpace />
 
         <View className='item'>
-          <Input className='input' id='title' type='text' placeholder='文章标题' maxLength={30} onBlur={this.onHandleChange} />
+          <Input className='input' id='title' type='text' placeholder='文章标题' value={article && article.title} maxLength={30} onBlur={this.onHandleChange} />
         </View>
 
         <WhiteSpace />

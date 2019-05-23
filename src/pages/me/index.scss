@@ -1,0 +1,119 @@
+@import '../../styles/minxin.scss';
+
+.me-view{
+
+  .bg{
+    @include wh(100%, 300px);
+    background: rgb(139,11,105);
+    // border-bottom-left-radius: 20px;
+    // border-bottom-right-radius: 20px;
+    background: linear-gradient(90deg, rgba(139,11,105,1) 0%, rgba(213,141,100,1) 100%);
+  }
+
+  .base{
+    // @include wh(100%, 100px);
+    @include fj();
+    box-sizing: border-box;
+    flex-direction: column;
+    padding: 40px;
+  }
+
+  .photo-border, .border1, .border2{
+    @include wh(140px, 140px);
+    @include fj();
+    border-radius: 50%;
+    border: 1PX dashed #333;
+    margin: 0 auto;
+  }
+
+  // .border1,.border2{
+  //   position: absolute;
+  //   // transform: perspective(1000);
+  //   transform-origin: center center;
+  //   transform: rotateY(30deg);
+  // }
+  // .border2{
+  //   transform: rotateY(60deg);
+  // }
+
+  .photo{
+    @include wh(100px, 100px);
+    @include bj('../../', 'photo.jpg');
+    border-radius: 50%;
+    // z-index: 10;
+  }
+
+  .info1{
+    flex-direction: column;
+    height: 90px;
+    margin-top: 20px;
+    @include fj();
+
+    .name{
+      font-weight: 500;
+      font-size: 30px;
+    }
+
+    .career{
+      font-size: 24px;
+    }
+
+  }
+
+  .info2{
+    margin-bottom: 20px;
+    @include fj();
+    .item{
+      flex: 1;
+      text-align: center;
+      .age, .expe, .energy{
+        font-weight: bold;
+      }
+      .text{
+        font-size: 20px;
+      }
+    }
+  }
+
+  .item-wrap{
+    padding: 40px;
+    @include fj(space-between, center);
+    flex-wrap: wrap;
+    .item{
+      @include wh(200px, 200px);
+      @include fj();
+      background-color: rgb(253, 253, 253);
+      flex-direction: column;
+      font-size: 24px;
+      border-radius: 5px;
+      box-shadow: 0 10px 20px #eee;
+      margin-bottom: 40px;
+    }
+
+    .about{
+      @include bj('../../', 'trangle.png', 60px, 60px);
+    }
+    .edu{
+      @include bj('../../', 'icon-edu.png', 60px, 60px);
+    }
+    .exp{
+      @include bj('../../', 'icon-exp.png', 50px, 60px);
+    }
+    .dsn{
+      @include bj('../../', 'icon-dsn.png', 60px, 60px);
+    }
+    .skl{
+      @include bj('../../', 'icon-skill.png', 60px, 60px);
+    }
+    .cnt{
+      @include bj('../../', 'icon-cnt.png', 1PX, 60px);
+    }
+
+  }
+
+  .time{
+    text-align: center;
+    font-size: 24px;
+  }
+
+}
