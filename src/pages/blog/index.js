@@ -5,6 +5,8 @@ import ArticleItem from '@cp/articleItem'
 
 import './index.scss'
 
+let count = null
+
 class Blog extends Component {
 
    config = {
@@ -12,7 +14,7 @@ class Blog extends Component {
   }
 
   state={
-    count: null,
+    // count: null,
     articles: [],
     loading: false,
   }
@@ -38,17 +40,18 @@ class Blog extends Component {
       }
     }).then(res => {
       this.setState({
-        count: res.result.count,
+        // count: res.result.count,
         articles: [...articles, ...res.result.data],
         loading: true
       })
+      count = res.result.count
     }).catch(err => {
       console.log(err)
     })
   }
 
   onReachBottom = () => {
-    const { articles, count } = this.state
+    const { articles } = this.state
     articles.length < count ? this.getDataList() : null
   }
 

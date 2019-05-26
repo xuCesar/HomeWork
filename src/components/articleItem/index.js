@@ -30,13 +30,15 @@ class ArticleItem extends PureComponent {
     if (!article) return null
     return (
       <View className="card-item" onClick={this.onViewToDetail.bind(this, article._id)}>
-        <Image className='card-bg' mode="aspectFill" src={article.cover} />
         <View className="card">
-          <View className="head">{article.title}</View>
-          <View className="body">
-            <View className="tag"># 小程序</View>
-            <View className="time">{moment(article.updateTime).format("MMM Do YYYY")}</View>
+          <View className="card-header">
+            <Image className='cover' mode="aspectFill" src={article.cover} />
+            <View className="title">{article.title}</View>
           </View>
+          <View className="card-footer">
+              <View className="tag"># 小程序</View>
+              <View className="time">{moment(article.updateTime).format("MMM Do YYYY")}</View>
+            </View>
         </View>
       </View>
     );

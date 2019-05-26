@@ -26,7 +26,7 @@ class CadeDetail extends PureComponent {
     return (
       <View className='case-detail'>
         <View className="header">
-          <View className="time">2019-05-20</View>
+          <View className="time">May 20th 2019</View>
           <View className="title">DIPTYQUE情人节限时店</View>
           
           <View className='tag-list'>

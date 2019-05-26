@@ -1,48 +1,15 @@
 @import '../../styles/minxin.scss';
 
 .blog-view{
-
+  // background-color: #f4f6fa;
+  background-color: #fff;
+  padding-bottom: 20px;
   .header{
-    color: #fff;
+    color: rgb(100, 89, 116);
     font-weight: 500;
-    background: rgb(32,11,139);
-    background: linear-gradient(90deg, rgba(32,11,139,1) 0%, rgba(100,206,213,1) 100%);
     @include fj();
     @include wh(100%, 200px);
   }
 
-  // .blog-item{
-  //   margin: 30px auto;
-  //   border-radius: 20px;
-  //   overflow: hidden;
-  //   position: relative;
-  //   box-shadow: 0 0 10px #999;
-  //   @include wh(670px, 220px);
-  //   .bg{
-  //     width: 100%;
-  //     height: 100%;
-  //   }
-  //   .content{
-  //     position: absolute;
-  //     top: 0;
-  //     padding: 20px 40px;
-  //     box-sizing: border-box;
-  //     background-color: rgba(0, 0, 0, 0.4);
-  //     color: #fff;
-  //     @include wh(100%, 100%);
-  //     @include fj(space-between, space-between);
-  //     flex-direction: column;
-
-  //     .title{
-  //       font-weight: 500;
-  //     }
-
-  //     .body{
-  //       font-size: 24px;
-  //       margin-top: 10px;
-  //       @include fj(space-between, center);
-  //     }
-  //   }
-  // }
 
 }

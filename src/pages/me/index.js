@@ -40,8 +40,8 @@ export default class Me extends Component {
           </View>
           <View className="info1">
             <View className='name'>徐政 / Cesar</View>
-            <View className='career'>FE Developer</View>
-            {/* <View className='career'>FE Developer / UI Designer</View> */}
+            {/* <View className='career'>FE Developer</View> */}
+            <View className='career'>FE Developer / UI Designer</View>
           </View>
         </View>
         
